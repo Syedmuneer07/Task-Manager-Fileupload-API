@@ -6,8 +6,8 @@ const cors=require('cors');
 const rateLimit=require('express-rate-limit');
 //const mongooseSanitize=require('express-mongo-sanitize');
 //const xssClean=require('xss-clean');
-const csrf=require('csurf');
-const cookieParser=require('cookie-parser');
+//const csrf=require('csurf');
+//const cookieParser=require('cookie-parser');
 require('dotenv').config();
 
 const limiter = rateLimit({
@@ -34,8 +34,8 @@ app.use(limiter);// apply rate limiting
 app.use(helmet());// set security headers
 //app.use(xssClean());// sanitize user input
 //app.use(mongooseSanitize());// sanitize user input
-app.use(cookieParser());// parse cookies
-app.use(csrf({cookie: true}));// enable CSRF protection
+//app.use(cookieParser());// parse cookies
+//app.use(csrf({cookie: true}));// enable CSRF protection
 app.use('/uploads',express.static('uploads'));// serve static files
 
 
